@@ -2,3 +2,4 @@ __pycache__
 venv 
 .flaskenv 
 dashboard/__pycache__
+main/__pycache__

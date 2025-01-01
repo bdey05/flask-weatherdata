@@ -6,3 +6,4 @@ load_dotenv(os.path.join(basedir, '.env'))
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
+    API_KEY=os.environ.get('API_KEY')

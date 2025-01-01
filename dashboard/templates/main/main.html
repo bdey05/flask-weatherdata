@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <table>
+        <tr>
+            {% for col_name in df.columns %}
+                <th>{{col_name}}</th>
+            {% endfor %}
+        </tr>
+        {% for index, row in df.iterrows() %}
+        <tr>
+            <th>{{row['Time']}}</th>
+            <th>{{row['Max Temperature']}}</th>
+            <th>{{row['Min Temperature']}}</th>
+            <th>{{row['Apparent Max Temperature']}}</th>
+            <th>{{row['Apparent Min Temperature']}}</th>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

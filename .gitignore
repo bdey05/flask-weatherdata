@@ -1,5 +1,5 @@
-__pycache__
+*/__pycache__
 venv 
 .flaskenv 
-dashboard/__pycache__
-main/__pycache__
+__pycache__
+migrations

@@ -1,8 +1,8 @@
-from dashboard.dbload import bp 
 from flask import render_template 
-from ..weather import GetWeatherStats 
+from dashboard.weather import GetWeatherStats 
 from dashboard.models.weathermodel import WeatherModel  
 from dashboard import db
+from dashboard.dbload import bp 
 
 @bp.route('/dbload')
 def load():
@@ -13,6 +13,6 @@ def load():
                                             min_temp=row['Min Temperature'],
                                             app_max_temp=row['Apparent Max Temperature'],
                                             app_min_temp=row['Apparent Min Temperature']) 
-    db.session.add(daily_weather_report)
-    db.session.commit()
+        db.session.add(daily_weather_report)
+        db.session.commit()
     return render_template('dbload/dbload.html')

@@ -1,4 +1,4 @@
-from dashboard import db, create_app
+from dashboard import db
 from sqlalchemy import Date, DateTime, Float
 from sqlalchemy.orm import Mapped, mapped_column
 import datetime 
@@ -21,7 +21,5 @@ class WeatherModel(db.Model):
             'app_max_temp': self.app_max_temp,
             'app_min_temp': self.app_min_temp
         }
-    
-app = create_app()
-with app.app_context():
-    db.create_all()
+
+

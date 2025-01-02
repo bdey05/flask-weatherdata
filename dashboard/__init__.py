@@ -6,6 +6,8 @@ from flask_migrate import Migrate
 db = SQLAlchemy()
 migrate = Migrate()
 
+from dashboard.models.weathermodel import WeatherModel
+
 def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
@@ -13,6 +15,8 @@ def create_app(config_class=Config):
     db.init_app(app)
     migrate.init_app(app, db)
 
+    with app.app_context():
+        db.create_all()
     
     from dashboard.main import bp as dashboardbp
     app.register_blueprint(dashboardbp)
